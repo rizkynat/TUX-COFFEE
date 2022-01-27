@@ -8,8 +8,10 @@
     <link rel="stylesheet" href="asset/style.css">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <title>Hello, world!</title>
+   
+ 
+    <title>Register</title>
+    
   </head>
   <body>
   
@@ -29,31 +31,31 @@
 
                     
     
-                      <form method="post" action="registerProcess.jsp">
+                      <form method="post" action="http://localhost:8080/tux_coffee/registerProcess">
                       <div class="form-outline mb-4" style="color:#C0A06F;">
                         <label class="form-label" for="form2Example11">Nama Lengkap Pengguna</label>
-                        <input type="text" id="form2Example11" class="form-control" name="namaLengkap" />
+                        <input type="text" id="form2Example11" class="form-control" name="namaLengkap" required=""/>
                       </div>                
                       <div class="form-outline mb-4" style="color:#C0A06F;">
                         <label class="form-label" for="form2Example22">Email</label>
-                        <input type="email" id="form2Example22" class="form-control" name="email" />
+                        <input type="email" id="form2Example22" class="form-control" name="email" required=""/>
                     </div>
                     <div class="row" style="color:#C0A06F;">
                         <label class="form-label" for="form2Example11">No.HP</label>
                     <div class="form-outline col-md-3 mb-4" style="color:#C0A06F;">
-                        <input type="text" id="form2Example11" class="form-control" placeholder="+62" name="code"/>
+                        <input type="tel" placeholder="+62" id="phone" class="form-control" name="code" required="" />
                       </div>
                     <div class="form-outline col-md-9 mb-4" style="color:#C0A06F;">
-                        <input type="text" id="form2Example11" class="form-control"  name="nohp"/>
+                        <input type="text" id="form2Example11" class="form-control"  name="nohp" required=""/>
                       </div>
                     </div>
                     <div class="form-outline mb-4" style="color:#C0A06F;">
                         <label class="form-label" for="form2Example11">Kata Sandi</label>
-                        <input type="text" id="form2Example11" class="form-control" name="password" />
+                        <input type="text" id="form2Example11" class="form-control" name="password" required="" />
                       </div>
                     <div class="form-outline mb-5" style="color:#C0A06F;">
                         <label class="form-label" for="form2Example11">Ulang Kata Sandi</label>
-                        <input type="text" id="form2Example11" class="form-control" name="repassword" />
+                        <input type="text" id="form2Example11" class="form-control" name="repassword" required=""/>
                       </div>   
         
                     
@@ -82,7 +84,7 @@
         </div>
       </div>
     </section>
-    <!-- Optional JavaScript; choose one of the two! -->
+
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
