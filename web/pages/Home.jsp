@@ -74,15 +74,15 @@
     <div class="slideshow-container">
 
       <div class="mySlides fade">
-        <img src="asset/big sale.png" alt="" style="width: 100%;">
+        <img src="http://localhost:8080/tux_coffee/pages/getImage.jsp?id=8" alt="" style="width: 100%;">
       </div>
 
       <div class="mySlides fade">
-        <img src="asset/big sale.png" alt="" style="width: 100%;">
+        <img src="http://localhost:8080/tux_coffee/pages/getImage.jsp?id=9" alt="" style="width: 100%;">
       </div>
 
       <div class="mySlides fade">
-        <img src="asset/big sale.png" alt="" style="width: 100%;">
+        <img src="http://localhost:8080/tux_coffee/pages/getImage.jsp?id=10" alt="" style="width: 100%;">
       </div>
     </div>
 
