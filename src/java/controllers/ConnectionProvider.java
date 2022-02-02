@@ -18,5 +18,46 @@ public class ConnectionProvider {
             return con;
         }
     
+        public static void CloseConnection() {
+        if (con != null) {
+            try {
+                con.close();
+                con = null;
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+        
+         public static ResultSet getResultFromSqlQuery(String SqlQueryString) {
+        //Creating Resultset object
+        ResultSet rs = null;
+        try {
+            //Checking whether the connection is null or null
+            if (con == null) {
+                getCon();
+            }
+            //Querying the query
+            rs = getCon().createStatement().executeQuery(SqlQueryString);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return rs;
+    }
     
+             public static int insertUpdateFromSqlQuery(String SqlQueryString) {
+        int i = 2;
+        try {
+            //Checking whether the connection is null or null
+            if (con == null) {
+                getCon();
+            }
+            //Querying the query
+            i = con.createStatement().executeUpdate(SqlQueryString);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return i;
+    }
 }

@@ -1,3 +1,5 @@
+<%@ page import="java.sql.*"%>
+<%@ page import="controllers.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en">
@@ -167,93 +169,32 @@
 </div>
 
 </div>
+<%
+    ResultSet rs = controllers.ConnectionProvider.getResultFromSqlQuery("select * from produk");
+%>
 <!--produk list-->
 <div class="container py-5">
   <div class="row">
+      <%while (rs.next()) {%>
     <div class="col-4">
       <div class="card">
-        <img src="asset/b1.jfif" class="card-img-top" alt="Fissure in Sandstone"/>
+        <img src="http://localhost:8080/tux_coffee/pages/getImageProduk.jsp?id=<%=rs.getInt("id_produk")%>" class="card-img-top" alt="Fissure in Sandstone"/>
         <div class="card-body">        
-          <p class="card-text">COFFEE Ceret Kopi 250ml Kettle Ang
-            sa Alat Kopi Manual Brew (Goose N...</p>
-            <h6 class="card-title" style="opacity: 50%;">Rp. 114.000</h6>
+          <p class="card-text"><%=rs.getString("nama_produk")%></p>
+            <h6 class="card-title" style="opacity: 50%;">Rp.<%=rs.getInt("harga_produk")-(rs.getInt("harga_produk")*rs.getInt("diskon")/100)%></h6>
           <div class="col-12 text-center">
           <a href="#!" class="btn" style="color: #995330;"><b>Beli</b></a>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-4">
-      <div class="card">
-        <img src="asset/b2.jfif" class="card-img-top" alt="Fissure in Sandstone"/>
-        <div class="card-body">        
-          <p class="card-text">Paket Kopi V60 Dripper + Pot Server 
-            Kaca 600ml Alat Kopi Manual Brew...</p>
-            <h6 class="card-title" style="opacity: 50%;">Rp. 190.000</h6>
-          <div class="col-12 text-center">
-          <a href="#!" class="btn" style="color: #995330;"><b>Beli</b></a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-4">
-      <div class="card">
-        <img src="asset/b3.jfif" class="card-img-top" alt="Fissure in Sandstone"/>
-        <div class="card-body">        
-          <p class="card-text">Paket Kopi V60 Dripper + Pot Serv
-            er Kaca 600ml + Kettle 420ml A...</p>
-            <h6 class="card-title" style="opacity: 50%;">Rp. 123.500</h6>
-          <div class="col-12 text-center">
-          <a href="#!" class="btn" style="color: #995330;"><b>Beli</b></a>
-          </div>
-        </div>
-      </div>
-    </div>
+             <%
+         }
+        %>
+     
   </div>
 </div>
-<div class="container py-3">
-  <div class="row">
-    <div class="col-4">
-      <div class="card">
-        <img src="asset/b1.jfif" class="card-img-top" alt="Fissure in Sandstone"/>
-        <div class="card-body">        
-          <p class="card-text">COFFEE Ceret Kopi 250ml Kettle Ang
-            sa Alat Kopi Manual Brew (Goose N...</p>
-            <h6 class="card-title" style="opacity: 50%;">Rp. 114.000</h6>
-          <div class="col-12 text-center">
-          <a href="#!" class="btn" style="color: #995330;"><b>Beli</b></a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-4">
-      <div class="card">
-        <img src="asset/b2.jfif" class="card-img-top" alt="Fissure in Sandstone"/>
-        <div class="card-body">        
-          <p class="card-text">Paket Kopi V60 Dripper + Pot Server 
-            Kaca 600ml Alat Kopi Manual Brew...</p>
-            <h6 class="card-title" style="opacity: 50%;">Rp. 190.000</h6>
-          <div class="col-12 text-center">
-          <a href="#!" class="btn" style="color: #995330;"><b>Beli</b></a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-4">
-      <div class="card">
-        <img src="asset/b3.jfif" class="card-img-top" alt="Fissure in Sandstone"/>
-        <div class="card-body">        
-          <p class="card-text">Paket Kopi V60 Dripper + Pot Serv
-            er Kaca 600ml + Kettle 420ml A...</p>
-            <h6 class="card-title" style="opacity: 50%;">Rp. 123.500</h6>
-          <div class="col-12 text-center">
-          <a href="#!" class="btn" style="color: #995330;"><b>Beli</b></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 <!--footer-->
 <!-- Remove the container if you want to extend the Footer to full width. -->
