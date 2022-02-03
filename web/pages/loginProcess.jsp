@@ -39,17 +39,13 @@
         passdbPsw = rs.getString("password");
         if(emaildbName.equals(emaildbName) && password.equals(passdbPsw)){
 
-        session.setAttribute("email",emaildbName);
+        session.setAttribute("email_pel",emaildbName);
 
         response.sendRedirect("Home.jsp"); 
 
         } 
       }else{
-            response.sendRedirect("error.jsp");
-
-            rs.close();
-
-            ps.close(); 
+           response.sendRedirect("error.jsp"); 
         }
             }catch(SQLException sqe){
                 out.println(sqe);

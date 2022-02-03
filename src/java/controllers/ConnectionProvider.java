@@ -44,6 +44,20 @@ public class ConnectionProvider {
         }
         return rs;
     }
+         public static ResultSet getResultIdFromResult(String SqlQuery, int id){
+              ResultSet rs = null;
+            try {
+            if (con == null) {
+                getCon();
+            }
+            PreparedStatement ps = getCon().prepareStatement(SqlQuery);
+            ps.setInt(1,id);
+            rs = ps.executeQuery();
+            }catch(Exception ex){
+                ex.printStackTrace();
+            }
+            return rs;
+         }
     
              public static int insertUpdateFromSqlQuery(String SqlQueryString) {
         int i = 2;
