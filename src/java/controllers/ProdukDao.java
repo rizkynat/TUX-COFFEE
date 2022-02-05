@@ -7,6 +7,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProdukDao {
+    
+       
+    public static int insert(ProdukBean pb){
+        int status=0;
+        try{
+            Connection con = controllers.ConnectionProvider.getCon();
+            PreparedStatement ps = con.prepareStatement("insert into produk(foto_produk,nama_produk,harga_produk,tgl_produk,diskon,stok,deskripsi)values(?,?,?,?,?,?,?)");
+            ps.setBlob(1, pb.getFoto_produk());
+            ps.setString(2, pb.getNama_produk());
+            ps.setInt(3, pb.getHarga_produk());
+            ps.setDate(4, pb.getTgl_produk());
+            ps.setInt(5, pb.getDiskon());
+            ps.setInt(6, pb.getStok());
+            ps.setString(7, pb.getDeskripsi());
+            
+            status=ps.executeUpdate();
+            con.close();
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
+        return status;
+    }
+    
     public static List<ProdukBean> getAllEmployees(){
     List<ProdukBean> list=new ArrayList<ProdukBean>();
     try{
