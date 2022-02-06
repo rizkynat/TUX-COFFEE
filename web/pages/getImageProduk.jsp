@@ -7,11 +7,11 @@
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.*;"%>
 <%
-String id =request.getParameter("id");
+String id_produk =request.getParameter("id_produk");
 try{
    Connection con=controllers.ConnectionProvider.getCon();
     PreparedStatement ps = con.prepareStatement("select * from produk where id_produk=?");
-    ps.setString(1, id);
+    ps.setString(1, id_produk);
     ResultSet rs = ps.executeQuery();
     if(rs.next()){
         Blob blob = rs.getBlob("foto_produk");

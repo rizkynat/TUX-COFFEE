@@ -135,7 +135,7 @@
       
          <%while (rs.next()) {%>
     <tr>
-      <td><img src="http://localhost:8080/tux_coffee/pages/getImageProduk.jsp?id=<%=rs.getInt("id_produk")%>" alt="" width="50px"></td>
+      <td><img src="http://localhost:8080/tux_coffee/pages/getImageProduk.jsp?id_produk=<%=rs.getInt("id_produk")%>" alt="" width="50px"></td>
       <td><%=rs.getString("nama_produk")%></td>
       <td><%=rs.getInt("harga_produk")%></td>
       <td><%=rs.getDate("tgl_produk")%></td>

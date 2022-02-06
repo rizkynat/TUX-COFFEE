@@ -184,11 +184,11 @@ h3{
                                 </div>
                                 <span class="header">Drag & Drop</span>
                                 <span class="header">or <span class="button">Browse</span></span>
-                                <input type="file" name="foto_produk" value="http://localhost:8080/tux_coffee/pages/getImageProduk.jsp?id=<%=rs.getInt("id_produk")%>" required="required" hidden/>
+                                <input type="file" name="foto_produk" value="http://localhost:8080/tux_coffee/pages/getImageProduk.jsp?id_produk=<%=rs.getInt("id_produk")%>" required  hidden/>
                                 <span class="support">Supports: JPEG, JPG, PNG</span>
                               </div>  
                             </div>
-                                <div class="container text-center"><img src="http://localhost:8080/tux_coffee/pages/getImageProduk.jsp?id=<%=rs.getInt("id_produk")%>" width="50%"></div>
+                                <div class="container text-center"><img src="http://localhost:8080/tux_coffee/pages/getImageProduk.jsp?id_produk=<%=rs.getInt("id_produk")%>" width="50%"></div>
                           </div><br>
 
                           <div class="row">
