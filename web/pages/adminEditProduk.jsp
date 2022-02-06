@@ -1,3 +1,6 @@
+<%@page import="java.sql.ResultSet"%>
+<%@ page import="java.sql.*"%>
+<%@ page import="controllers.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -147,7 +150,13 @@ h3{
                 </nav>
                 <!-- Page content-->
                 <div class="container-fluid py-2">
-                    <form action="http://localhost:8080/tux_coffee/tambahProdukProcess" method="post" enctype="multipart/form-data">
+                                          <%
+    int id_produk = Integer.parseInt(request.getParameter("id_produk"));
+    ResultSet rs = controllers.ConnectionProvider.getResultIdFromResult("select * from produk where id_produk=?",id_produk);
+    while (rs.next()) {
+%>
+      
+<form action="http://localhost:8080/tux_coffee/adminEditProdukProcess" method="post" enctype="multipart/form-data">
                   <div class="main" style="margin: 10px 10px;background-color: white;">
                     <div class="container-fluid">
                       <div class="row py-2 text-center">
@@ -160,11 +169,12 @@ h3{
                         </div>
                       </div>
                       <br>
-
-                      <!--Isi Konten Kiri-->
+                <!--Isi Konten Kiri-->
                       <div class="row py-2">
+                        
                         <div class="col-6">
                           <div class="row">
+                              
                             <h6 style="margin-left: 5%; color: #000; text-align: left;">Tambah Gambar</h6>
                             <div class="container">
                             
@@ -172,41 +182,44 @@ h3{
                                 <div class="icon">
                                   <i class="fas fa-images"></i>
                                 </div>
-
                                 <span class="header">Drag & Drop</span>
                                 <span class="header">or <span class="button">Browse</span></span>
-                                <input type="file" name="foto_produk" required="required" hidden/>
+                                <input type="file" name="foto_produk" value="http://localhost:8080/tux_coffee/pages/getImageProduk.jsp?id=<%=rs.getInt("id_produk")%>" required="required" hidden/>
                                 <span class="support">Supports: JPEG, JPG, PNG</span>
                               </div>  
                             </div>
+                                <div class="container text-center"><img src="http://localhost:8080/tux_coffee/pages/getImageProduk.jsp?id=<%=rs.getInt("id_produk")%>" width="50%"></div>
                           </div><br>
 
                           <div class="row">
                             <div class="col-6">
                               <h6 style="margin-left: 12%; color: #000; text-align: left;">Harga Produk (Rupiah)</h6>
                               <div class="mb-3">
-                                  <input type="text" name="harga_produk" class="form-control" id="harga_produk" aria-describedby="harga" style="margin-left: 12%; width: 80%; border-color: #C0A06F">
+                                  <input type="text" name="harga_produk" class="form-control" value="<%=rs.getInt("harga_produk")%>" id="harga_produk" aria-describedby="harga" style="margin-left: 12%; width: 80%; border-color: #C0A06F">
+                                    <input class="form-control" type="text" name="id_produk" value="<%=rs.getString("id_produk")%>" hidden/>
                               </div>
 
                               <h6 style="margin-left: 12%; color: #000; text-align: left;">Diskon Produk (%)</h6>
                               <div class="mb-3">
-                                  <input type="text" class="form-control" name="diskon" id="diskon" aria-describedby="diskon" style="margin-left: 12%; width: 80%; border-color: #C0A06F">
+                                  <input type="text" class="form-control" name="diskon" id="diskon" value="<%=rs.getInt("diskon")%>" aria-describedby="diskon" style="margin-left: 12%; width: 80%; border-color: #C0A06F">
                               </div>
 
                               <h6 style="margin-left: 12%; color: #000; text-align: left;">Stok</h6>
                               <div class="mb-3">
-                                  <input type="text" class="form-control" name="stok" id="stok" aria-describedby="diskon" style="margin-left: 12%; width: 80%; border-color: #C0A06F">
+                                  <input type="text" class="form-control" name="stok" id="stok" value="<%=rs.getInt("stok")%>" aria-describedby="diskon" style="margin-left: 12%; width: 80%; border-color: #C0A06F">
                               </div>
                             </div>
 
                             <div class="col-6">
-                              <div class="container-fluid";>
+                              <div class="container-fluid">
                                 <div class="row">
                                   <div class="col-1">
                                     <span style=" border-left: 2px solid #C0A06F; margin-left: 0%; border-radius: 25px; height: 244px;position: absolute; border-color: rgba(192, 160, 111, 0.4);"></span>
                                   </div>
                                     
-                                
+                                  <div class="col-11">
+                                    
+                                  </div>
                                     
                                 </div>
                               </div>
@@ -227,13 +240,13 @@ h3{
                             <div class="row">
                               <h6 style="color: #000; text-align: left;">Nama Produk</h6><br>
                               <div class="mb-3">
-                                <textarea name="nama_produk" cols="50" rows="2"></textarea>
+                                <textarea name="nama_produk"  cols="50" rows="2"><%=rs.getString("nama_produk")%></textarea>
                               </div>
                             </div>
                             <div class="row">
                               <h6 style="color: #000; text-align: left;">Deskripsi Produk</h6><br>
                               <div class="mb-3">
-                                <textarea name="deskripsi" cols="50" rows="18"></textarea>
+                                <textarea name="deskripsi" cols="50" rows="18"><%=rs.getString("deskripsi")%></textarea>
                               </div>
                             </div><br>
                             <div class="row">
@@ -250,7 +263,9 @@ h3{
                         </div>
                       </div>
                     </div>
-                   
+                            <%
+         }
+        %>
                     
                 </div>
                 </div>

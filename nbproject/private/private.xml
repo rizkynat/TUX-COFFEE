@@ -3,13 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/A%20S%20U%20S/Documents/NetBeansProjects/tux_coffee/web/pages/loginProcess.jsp</file>
-            <file>file:/C:/Users/A%20S%20U%20S/Documents/NetBeansProjects/tux_coffee/web/pages/Header.jsp</file>
-            <file>file:/C:/Users/A%20S%20U%20S/Documents/NetBeansProjects/tux_coffee/web/pages/detailBarang.jsp</file>
-            <file>file:/C:/Users/A%20S%20U%20S/Documents/NetBeansProjects/tux_coffee/web/pages/login.jsp</file>
+            <file>file:/C:/Users/A%20S%20U%20S/Documents/NetBeansProjects/tux_coffee/src/java/controllers/ProdukDao.java</file>
+            <file>file:/C:/Users/A%20S%20U%20S/Documents/NetBeansProjects/tux_coffee/src/java/controllers/uploadImage.java</file>
+            <file>file:/C:/Users/A%20S%20U%20S/Documents/NetBeansProjects/tux_coffee/src/java/controllers/ProdukBean.java</file>
+            <file>file:/C:/Users/A%20S%20U%20S/Documents/NetBeansProjects/tux_coffee/src/java/controllers/PelangganDao.java</file>
+            <file>file:/C:/Users/A%20S%20U%20S/Documents/NetBeansProjects/tux_coffee/src/java/controllers/tambahProdukProcess.java</file>
+            <file>file:/C:/Users/A%20S%20U%20S/Documents/NetBeansProjects/tux_coffee/web/pages/tambahProduk.jsp</file>
             <file>file:/C:/Users/A%20S%20U%20S/Documents/NetBeansProjects/tux_coffee/web/pages/register.jsp</file>
             <file>file:/C:/Users/A%20S%20U%20S/Documents/NetBeansProjects/tux_coffee/src/java/controllers/registerProcess.java</file>
-            <file>file:/C:/Users/A%20S%20U%20S/Documents/NetBeansProjects/tux_coffee/web/pages/Home.jsp</file>
         </group>
     </open-files>
 </project-private>

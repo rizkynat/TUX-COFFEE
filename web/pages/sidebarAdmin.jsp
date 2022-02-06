@@ -29,9 +29,9 @@
                             height: 126px;border-radius: 25px;"></div>
                           </div>
                           <div class="col-9">
-                        <a href="#">Produk</a>
-                        <a href="#">Tambah Produk</a>
-                        <a href="#">Promosi</a>
+                        <a href="http://localhost:8080/tux_coffee/pages/adminProduk.jsp">Produk</a>
+                        <a href="http://localhost:8080/tux_coffee/pages/tambahProduk.jsp">Tambah Produk</a>
+                        <a href="">Promosi</a>
                         </div>
                         </div>
                       </div>
