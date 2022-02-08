@@ -43,11 +43,12 @@ public class adminEditProdukProcess extends HttpServlet {
        String nama_produk = request.getParameter("nama_produk");
        int diskon=Integer.parseInt(request.getParameter("diskon"));
        int stok = Integer.parseInt(request.getParameter("stok"));
+       int berat = Integer.parseInt(request.getParameter("berat"));
        String deskripsi = request.getParameter("deskripsi");
         if (foto_produk != null) {
            try {
                Connection con=controllers.ConnectionProvider.getCon();
-               PreparedStatement ps=con.prepareStatement("update produk set foto_produk=?,nama_produk=?,harga_produk=?,diskon=?,stok=?,deskripsi=? where id_produk=?");
+               PreparedStatement ps=con.prepareStatement("update produk set foto_produk=?,nama_produk=?,harga_produk=?,diskon=?,stok=?,berat=?,deskripsi=? where id_produk=?");
                 InputStream is = foto_produk.getInputStream();
                 ps.setBlob(1, is);
                 ps.setString(2, nama_produk);
@@ -55,8 +56,9 @@ public class adminEditProdukProcess extends HttpServlet {
                 //ps.setDate(4, date);
                 ps.setInt(4, diskon);
                 ps.setInt(5, stok);
-                ps.setString(6, deskripsi);
-                ps.setInt(7,id_produk);
+                ps.setInt(6, berat);
+                ps.setString(7, deskripsi);
+                ps.setInt(8,id_produk);
                 int status = ps.executeUpdate();
                 if (status > 0) {
                     response.sendRedirect("http://localhost:8080/tux_coffee/pages/adminProduk.jsp");

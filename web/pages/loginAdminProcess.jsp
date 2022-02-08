@@ -1,12 +1,5 @@
 <%@page import="java.sql.*;"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
         <%! String emaildbName;
 
             String passdbPsw;
@@ -17,10 +10,10 @@
         PreparedStatement ps = null;
 
         ResultSet rs = null;
-        String sql ="select * from pelanggan where email_pel=? and password=?"; 
+        String sql ="select * from admin where email_adm=? and password_adm=?"; 
         
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
+        String email = request.getParameter("email_adm");
+        String password = request.getParameter("password_adm");
         
         if( (!(email.equals(null) || (email.equals(""))&& !(password.equals(null) || 
         password.equals("")))) ){
@@ -34,22 +27,20 @@
 
         if(rs.next()){ 
 
-        emaildbName = rs.getString("email_pel");
-        passdbPsw = rs.getString("password");
+        emaildbName = rs.getString("email_adm");
+        passdbPsw = rs.getString("password_adm");
         if(emaildbName.equals(emaildbName) && password.equals(passdbPsw)){
 
-        session.setAttribute("email_pel",emaildbName);
+        session.setAttribute("email_adm",emaildbName);
 
-        response.sendRedirect("Home.jsp"); 
+        response.sendRedirect("http://localhost:8080/tux_coffee/pages/kelolaAkunAdmin.jsp"); 
 
         } 
       }else{
-           response.sendRedirect("error.jsp"); 
+           response.sendRedirect("http://localhost:8080/tux_coffee/pages/errorAdmin.jsp"); 
         }
             }catch(SQLException sqe){
                 out.println(sqe);
             }
     }
         %>
-    </body>
-</html>

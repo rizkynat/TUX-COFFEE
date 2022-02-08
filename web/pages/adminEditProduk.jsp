@@ -184,7 +184,7 @@ h3{
                                 </div>
                                 <span class="header">Drag & Drop</span>
                                 <span class="header">or <span class="button">Browse</span></span>
-                                <input type="file" name="foto_produk" value="http://localhost:8080/tux_coffee/pages/getImageProduk.jsp?id_produk=<%=rs.getInt("id_produk")%>" required  hidden/>
+                                <input type="file" name="foto_produk" value="http://localhost:8080/tux_coffee/pages/getImageProduk.jsp?id_produk=<%=rs.getInt("id_produk")%>"   hidden/>
                                 <span class="support">Supports: JPEG, JPG, PNG</span>
                               </div>  
                             </div>
@@ -218,7 +218,9 @@ h3{
                                   </div>
                                     
                                   <div class="col-11">
-                                    
+                                    <h6 style="margin-left: 22%; color: #000; text-align: left;">Berat Produk(Gram)</h6>
+                                    <input class="form-control" list="datalistOptions" name="berat" value="<%=rs.getInt("berat")%>" id="berat" placeholder="4000" style="margin-left: 22%; width: 192px; border-color: #C0A06F; color: rgba(192, 160, 111, 0.4); ">
+                                   
                                   </div>
                                     
                                 </div>

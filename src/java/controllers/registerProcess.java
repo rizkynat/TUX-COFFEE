@@ -15,15 +15,7 @@ public class registerProcess extends HttpServlet {
      
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -34,7 +26,6 @@ public class registerProcess extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
         PrintWriter out = response.getWriter();
         String namaLengkap = request.getParameter("namaLengkap");
         String email = request.getParameter("email");
@@ -53,10 +44,10 @@ public class registerProcess extends HttpServlet {
         
         int status = PelangganDao.insert(pb);
         if(status>0){
-            response.sendRedirect("http://localhost:8080/tux_coffee/pages/Home.jsp");
+            response.sendRedirect("http://localhost:8080/tux_coffee/pages/login.jsp");
         }else{
             //response.sendRedirect("http://localhost:8080/tux_coffee/pages/login.jsp");
-            out.println(pb.getNamaLengkap()+pb.getEmail()+pb.getNohp()+pb.getPassword());
+            out.println("http://localhost:8080/tux_coffee/pages/errorAdmin.jsp");
         }
         out.close();
     }

@@ -29,7 +29,7 @@
           <!--navbar-->
           <jsp:include page="Header.jsp"></jsp:include>
 <%
-    int id = Integer.parseInt(request.getParameter("id"));
+    int id = Integer.parseInt(request.getParameter("id_produk"));
     ResultSet rs = controllers.ConnectionProvider.getResultIdFromResult("select * from produk where id_produk=?",id);
     
 %>
@@ -38,7 +38,7 @@
             <div class="row">
                 <div class="col-6 text-center">
                      <%while (rs.next()) {%>
-                <img class="img-fluid" src="http://localhost:8080/tux_coffee/pages/getImageProduk.jsp?id=<%=rs.getInt("id_produk")%>" alt="" width="500px">
+                <img class="img-fluid" src="http://localhost:8080/tux_coffee/pages/getImageProduk.jsp?id_produk=<%=rs.getInt("id_produk")%>" alt="" width="500px">
                 <div class="row py-3">
                   <div class="col-4 offset-1">
                     <img src="asset/b12 1.png" alt="" width="150px">
@@ -48,7 +48,8 @@
                   </div>
                 </div>
                 </div>
-                <div class="row col-6 py-5">                   
+                <div class="row col-6 py-5">
+                <form class="" action="http://localhost:8080/tux_coffee/wishlistProcess?id_produk=<%=rs.getInt("id_produk")%>" method="post">
                     <div class="row" style="height: 90%;">
                     <div class="row">
                     <div class="col-5 my-auto">
@@ -117,21 +118,20 @@
                       <div class="col-4 fw-bold" style="color: black;opacity: 0.5;font-weight: 300;">
                         Kuantitas
                     </div>
-                    <div class="col-4 fw-bold" style="color: black;opacity: 0.5;font-weight: 300;">
-                      <form class="input-group w-auto my-auto d-none d-sm-flex">
+                    <div class="col-4 fw-bold input-group w-auto my-auto d-none d-sm-flex" style="color: black;opacity: 0.5;font-weight: 300;">
+                        
                         <button class="input-group-text border-0" style="background-color: #C0A06F;" id="search-addon">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-dash-lg" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z"/>
                           </svg>
                         </button>
-                        <input  type="search" class="form-control"  
+                        <input  type="search" name="kuantitas" value="1" class="form-control"  
                         placeholder="" aria-label="Search" aria-describedby="search-addon"/>
                         <button class="input-group-text border-0" style="background-color: #C0A06F;" id="search-addon">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-plus-lg" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
                           </svg>
                         </button>
-                      </form>
                   </div>
                   <div class="col-4 fw-bold" style="color: black;opacity: 0.5;font-weight: 300;">
                     
@@ -139,18 +139,18 @@
                     </div>
                     <div class="row py-5">
                       <div class="col-5 my-auto">
-                      <button class="btn" style="background-color: #C0A06F; color: #ffff; height: 40px; width: 100%;" type="button">
+                      <button class="btn" style="background-color: #C0A06F; color: #ffff; height: 40px; width: 100%;" type="submit">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
                           <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z"/>
                           <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
                         </svg>  Masukkan Keranjang</button>
                       </div>
                       <div class="col-5 my-auto">
-                      <button class="btn" style="background-color: #C0A06F; color: #ffff;height: 40px; width: 100%;" type="button">Beli Sekarang</button>
+                          <button type="submit" class="btn" style="background-color: #C0A06F; color: #ffff;height: 40px; width: 100%;" type="button">Beli Sekarang</button>
                       </div>
                       </div>
                      </div>                 
-                    
+                    </form>
                    </div>
                   </div>
             </div>

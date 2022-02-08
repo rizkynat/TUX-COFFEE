@@ -23,7 +23,6 @@ public class ProdukDao {
             ps.setString(7, pb.getDeskripsi());
             
             status=ps.executeUpdate();
-            con.close();
         }catch(Exception ex){
             ex.printStackTrace();
         }

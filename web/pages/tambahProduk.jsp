@@ -185,17 +185,17 @@ h3{
                             <div class="col-6">
                               <h6 style="margin-left: 12%; color: #000; text-align: left;">Harga Produk (Rupiah)</h6>
                               <div class="mb-3">
-                                  <input type="text" name="harga_produk" class="form-control" id="harga_produk" aria-describedby="harga" style="margin-left: 12%; width: 80%; border-color: #C0A06F">
+                                  <input type="text" name="harga_produk" class="form-control"  placeholder="25000" id="harga_produk" aria-describedby="harga" style="margin-left: 12%; width: 80%; border-color: #C0A06F">
                               </div>
 
                               <h6 style="margin-left: 12%; color: #000; text-align: left;">Diskon Produk (%)</h6>
                               <div class="mb-3">
-                                  <input type="text" class="form-control" name="diskon" id="diskon" aria-describedby="diskon" style="margin-left: 12%; width: 80%; border-color: #C0A06F">
+                                  <input type="text" class="form-control" name="diskon"  placeholder="10" id="diskon" aria-describedby="diskon" style="margin-left: 12%; width: 80%; border-color: #C0A06F">
                               </div>
 
-                              <h6 style="margin-left: 12%; color: #000; text-align: left;">Stok</h6>
+                              <h6 style="margin-left: 12%; color: #000; text-align: left;">Stok(Buah)</h6>
                               <div class="mb-3">
-                                  <input type="text" class="form-control" name="stok" id="stok" aria-describedby="diskon" style="margin-left: 12%; width: 80%; border-color: #C0A06F">
+                                  <input type="text" class="form-control" name="stok"  placeholder="20" id="stok" aria-describedby="diskon" style="margin-left: 12%; width: 80%; border-color: #C0A06F">
                               </div>
                             </div>
 
@@ -205,7 +205,11 @@ h3{
                                   <div class="col-1">
                                     <span style=" border-left: 2px solid #C0A06F; margin-left: 0%; border-radius: 25px; height: 244px;position: absolute; border-color: rgba(192, 160, 111, 0.4);"></span>
                                   </div>
-                                    
+                                     <div class="col-11">
+                                    <h6 style="margin-left: 22%; color: #000; text-align: left;">Berat Produk(Gram)</h6>
+                                    <input class="form-control" list="datalistOptions" name="berat" id="kategori" placeholder="4000" style="margin-left: 22%; width: 192px; border-color: #C0A06F; color: rgba(192, 160, 111, 0.4); ">
+                                   
+                                  </div>
                                 
                                     
                                 </div>
@@ -227,13 +231,13 @@ h3{
                             <div class="row">
                               <h6 style="color: #000; text-align: left;">Nama Produk</h6><br>
                               <div class="mb-3">
-                                <textarea name="nama_produk" cols="50" rows="2"></textarea>
+                                  <textarea name="nama_produk" placeholder="isi nama produk" cols="50" rows="2"></textarea>
                               </div>
                             </div>
                             <div class="row">
                               <h6 style="color: #000; text-align: left;">Deskripsi Produk</h6><br>
                               <div class="mb-3">
-                                <textarea name="deskripsi" cols="50" rows="18"></textarea>
+                                <textarea name="deskripsi"  placeholder="Deskripsi barng berupa ..." cols="50" rows="18"></textarea>
                               </div>
                             </div><br>
                             <div class="row">

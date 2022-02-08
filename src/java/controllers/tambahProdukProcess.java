@@ -58,12 +58,13 @@ public class tambahProdukProcess extends HttpServlet {
         //java.util.Date date=formatter.parse(request.getParameter("date"));
         int diskon = Integer.parseInt(request.getParameter("diskon"));
         int stok = Integer.parseInt(request.getParameter("stok"));
+        int berat = Integer.parseInt(request.getParameter("berat"));
         String deskripsi = request.getParameter("deskripsi");
         Part foto_produk = request.getPart("foto_produk");
          if (foto_produk != null) {
            try {
                 Connection con=controllers.ConnectionProvider.getCon();
-                ps = con.prepareStatement("insert into produk(foto_produk,nama_produk,harga_produk,diskon,stok,deskripsi) values(?,?,?,?,?,?)");
+                ps = con.prepareStatement("insert into produk(foto_produk,nama_produk,harga_produk,diskon,stok,berat,deskripsi) values(?,?,?,?,?,?,?)");
                 InputStream is = foto_produk.getInputStream();
                 ps.setBlob(1, is);
                 ps.setString(2, nama_produk);
@@ -71,7 +72,8 @@ public class tambahProdukProcess extends HttpServlet {
                 //ps.setDate(4, date);
                 ps.setInt(4, diskon);
                 ps.setInt(5, stok);
-                ps.setString(6, deskripsi);
+                ps.setInt(6, berat);
+                ps.setString(7, deskripsi);
                 result = ps.executeUpdate();
                 if (result > 0) {
                     response.sendRedirect("http://localhost:8080/tux_coffee/pages/adminProduk.jsp");

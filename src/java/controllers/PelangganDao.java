@@ -16,7 +16,6 @@ public class PelangganDao {
             ps.setString(4, pb.getPassword());
             
             status=ps.executeUpdate();
-            con.close();
         }catch(Exception ex){
             ex.printStackTrace();
         }

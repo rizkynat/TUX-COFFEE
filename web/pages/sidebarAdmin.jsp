@@ -14,7 +14,7 @@
                           height: 100px;border-radius: 25px;"></div>
                         </div>
                         <div class="col-8">
-                        <a href="#">Peramalan</a>
+                        <a href="http://localhost:8080/tux_coffee/pages/peramalan.jsp">Peramalan</a>
                         <a href="#">Penjualan</a>
                       </div>
                       </div>
@@ -31,7 +31,7 @@
                           <div class="col-9">
                         <a href="http://localhost:8080/tux_coffee/pages/adminProduk.jsp">Produk</a>
                         <a href="http://localhost:8080/tux_coffee/pages/tambahProduk.jsp">Tambah Produk</a>
-                        <a href="">Promosi</a>
+                        <a href="http://localhost:8080/tux_coffee/pages/promosi.jsp">Promosi</a>
                         </div>
                         </div>
                       </div>
@@ -39,8 +39,8 @@
                       <span class="iconify" data-icon="line-md:account" style="color: #c0a06f;font-size: 35px;"></span>
                       <span style="color: #c0a06f;">Akun</span></a>
                       <div class="dropdown-container">
-                        <a href="#">User</a>
-                        <a href="#">Admin</a>
+                        <a href="http://localhost:8080/tux_coffee/pages/kelolaAkunUser.jsp">User</a>
+                        <a href="http://localhost:8080/tux_coffee/pages/kelolaAkunAdmin.jsp">Admin</a>
                       </div>
                 </div>
             </div>
