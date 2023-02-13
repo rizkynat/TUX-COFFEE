@@ -15,4 +15,4 @@ Web application for selling coffee equipment. This application based on requirem
 **Database:** Mysql JDBC
 
 ## Interface
-<p align="center"><img width=95% src="https://raw.githubusercontent.com/rizkynat/TUX-COFFEE/master/web/pages/asset/tux_coffe.png"></p>
+<p align="center"><img width=95% src="https://raw.githubusercontent.com/rizkynat/TUX-COFFEE/master/web/pages/asset/tux_coffee.png"></p>
